@@ -120,6 +120,8 @@ body {
   outline: none;
   background: #fff;
   min-height: 200px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 li {
