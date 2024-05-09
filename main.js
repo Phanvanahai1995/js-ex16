@@ -8,6 +8,10 @@ function formatDoc(cmd, value = null) {
   }
 }
 
+function activeEl(e) {
+  e.classList.toggle("active");
+}
+
 function addLink() {
   const url = prompt(`Insert url`);
   formatDoc("createLink", url);

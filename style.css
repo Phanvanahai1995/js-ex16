@@ -103,9 +103,14 @@ body {
   outline: none;
   border: none;
   font-size: 18px;
+  overflow: hidden;
 }
 
 .toolbar .btn-toolbar button:hover {
+  background: #81c0de;
+}
+
+.btn-toolbar button.active {
   background: #81c0de;
 }
 
