@@ -1,15 +1,11 @@
 "use strict";
 
-function formatDoc(cmd, value = null) {
+function formatDoc(cmd, value = "") {
   if (value) {
     document.execCommand(cmd, false, value);
   } else {
     document.execCommand(cmd);
   }
-}
-
-function activeEl(e) {
-  e.classList.toggle("active");
 }
 
 function addLink() {

@@ -83,19 +83,27 @@
           <button onclick="formatDoc('redo')">
             <i class="bx bx-redo"></i>
           </button>
-          <button onclick="formatDoc('bold'), activeEl(this)" class="bold">
+          <button
+            onclick="formatDoc('bold'),  this.classList.toggle('active')"
+            class="bold"
+          >
             <i class="bx bx-bold"></i>
           </button>
           <button
-            onclick="formatDoc('underline'), activeEl(this)"
+            onclick="formatDoc('underline'), this.classList.toggle('active')"
             class="underline"
           >
             <i class="bx bx-underline"></i>
           </button>
-          <button onclick="formatDoc('italic'), activeEl(this)" class="italic">
+          <button
+            onclick="formatDoc('italic'), this.classList.toggle('active')"
+            class="italic"
+          >
             <i class="bx bx-italic"></i>
           </button>
-          <button onclick="formatDoc('strikeThrough'), activeEl(this)">
+          <button
+            onclick="formatDoc('strikeThrough'), this.classList.toggle('active')"
+          >
             <i class="bx bx-strikethrough"></i>
           </button>
           <button onclick="formatDoc('justifyLeft')">
