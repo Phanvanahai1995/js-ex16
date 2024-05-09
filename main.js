@@ -1,5 +1,11 @@
 "use strict";
 
+const content = document.getElementById("content");
+
+window.addEventListener("load", function () {
+  content.focus();
+});
+
 function formatDoc(cmd, value = "") {
   if (value) {
     document.execCommand(cmd, false, value);
@@ -12,8 +18,6 @@ function addLink() {
   const url = prompt(`Insert url`);
   formatDoc("createLink", url);
 }
-
-const content = document.getElementById("content");
 
 content.addEventListener("mouseenter", function () {
   const a = content.querySelectorAll("a");
