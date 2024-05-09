@@ -97,3 +97,21 @@ content.addEventListener("input", function () {
   charNumber.dispatchEvent(countEvent);
   wordNumber.dispatchEvent(countEvent);
 });
+
+const boldEl = document.querySelector(".bold");
+const underlineEl = document.querySelector(".underline");
+const italicEl = document.querySelector(".italic");
+
+window.addEventListener("keyup", function (e) {
+  if (e.ctrlKey && e.key === "b") {
+    boldEl.classList.toggle("active");
+  }
+
+  if (e.ctrlKey && e.key === "u") {
+    underlineEl.classList.toggle("active");
+  }
+
+  if (e.ctrlKey && e.key === "i") {
+    italicEl.classList.toggle("active");
+  }
+});
