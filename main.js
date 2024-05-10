@@ -1,6 +1,7 @@
 "use strict";
 
 const content = document.getElementById("content");
+const container = document.querySelector(".container");
 
 window.addEventListener("load", function () {
   content.focus();
@@ -8,8 +9,10 @@ window.addEventListener("load", function () {
 
 function formatDoc(cmd, value = "") {
   if (value) {
+    content.focus();
     document.execCommand(cmd, false, value);
   } else {
+    content.focus();
     document.execCommand(cmd);
   }
 }
@@ -64,10 +67,12 @@ function fileHandle(value) {
     link.href = url;
     link.download = `${filename.value}.txt`;
     link.click();
+    content.focus();
   } else if (value === "pdf") {
     html2pdf().from(content).save(filename.value);
     filename.value = "United";
     selectFile.selectedIndex = "0";
+    content.focus();
   }
 }
 
@@ -104,14 +109,17 @@ const italicEl = document.querySelector(".italic");
 
 window.addEventListener("keyup", function (e) {
   if (e.ctrlKey && e.key === "b") {
+    content.focus();
     boldEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "u") {
+    content.focus();
     underlineEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "i") {
+    content.focus();
     italicEl.classList.toggle("active");
   }
 });
