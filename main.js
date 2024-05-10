@@ -70,12 +70,11 @@ function fileHandle(value) {
     link.href = url;
     link.download = `${filename.value}.txt`;
     link.click();
-    console.log(link.download);
+    content.focus();
   } else if (value === "pdf") {
     html2pdf().from(content).save(filename.value);
     filename.value = "United";
   }
-
   content.focus();
   selectFile.selectedIndex = "0";
 }
@@ -110,18 +109,21 @@ const italicEl = document.querySelector(".italic");
 
 window.addEventListener("keyup", function (e) {
   e.preventDefault();
-  content.focus();
+
   if (e.ctrlKey && e.key === "b") {
+    content.focus();
     document.execCommand("bold");
     boldEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "u") {
+    content.focus();
     document.execCommand("underline");
     underlineEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "i") {
+    content.focus();
     document.execCommand("italic");
     italicEl.classList.toggle("active");
   }
