@@ -8,11 +8,10 @@ window.addEventListener("load", function () {
 });
 
 function formatDoc(cmd, value = "") {
+  content.focus();
   if (value) {
-    content.focus();
     document.execCommand(cmd, false, value);
   } else {
-    content.focus();
     document.execCommand(cmd);
   }
 }
@@ -108,20 +107,18 @@ const italicEl = document.querySelector(".italic");
 
 window.addEventListener("keyup", function (e) {
   e.preventDefault();
+  content.focus();
   if (e.ctrlKey && e.key === "b") {
-    content.focus();
     document.execCommand("bold");
     boldEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "u") {
-    content.focus();
     document.execCommand("underline");
     underlineEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "i") {
-    content.focus();
     document.execCommand("italic");
     italicEl.classList.toggle("active");
   }
