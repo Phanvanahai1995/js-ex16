@@ -134,13 +134,9 @@ body {
   padding: 16px;
   outline: none;
   background: #fff;
-  height: 500px;
+  height: 450px;
   overflow-y: auto;
 }
-
-/* #content::-webkit-scrollbar {
-  width: 0;
-} */
 
 /* width */
 #content::-webkit-scrollbar {
@@ -168,7 +164,7 @@ body {
 ::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 407px;
+  width: 200px;
   height: 8px;
   border-radius: 20px;
   background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
