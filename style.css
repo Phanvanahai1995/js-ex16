@@ -11,7 +11,12 @@ html {
 }
 
 body {
-  background: #81c0de;
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.2824 0.5686 0.6784) 0%,
+    color(display-p3 0.5294 0.8275 0.9176) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,23 +113,74 @@ body {
 }
 
 .toolbar .btn-toolbar button:hover {
-  background: #81c0de;
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.2824 0.5686 0.6784) 0%,
+    color(display-p3 0.5294 0.8275 0.9176) 100%
+  );
 }
 
 .btn-toolbar button.active {
-  background: #81c0de;
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.2824 0.5686 0.6784) 0%,
+    color(display-p3 0.5294 0.8275 0.9176) 100%
+  );
 }
 
 #content {
   padding: 16px;
   outline: none;
   background: #fff;
-  min-height: 200px;
-  max-height: 500px;
-  overflow-y: scroll;
+  height: 500px;
+  overflow-y: auto;
 }
 
-li {
+/* #content::-webkit-scrollbar {
+  width: 0;
+} */
+
+/* width */
+#content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#content::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+#content::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.2824 0.5686 0.6784) 0%,
+    color(display-p3 0.5294 0.8275 0.9176) 100%
+  );
+  border-radius: 10px;
+  cursor: default;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 407px;
+  height: 8px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.2824 0.5686 0.6784) 0%,
+    color(display-p3 0.5294 0.8275 0.9176) 100%
+  );
+  cursor: pointer;
+}
+
+#content li {
   margin-left: 16px;
 }
 
@@ -134,7 +190,7 @@ a {
 }
 
 #show-code[data-active="true"] {
-  background: #81c0de;
+  background: linear-gradient(90deg, #2293b0 0%, #6cd5ed 100%);
 }
 
 .number-count {

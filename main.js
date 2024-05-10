@@ -108,18 +108,22 @@ const underlineEl = document.querySelector(".underline");
 const italicEl = document.querySelector(".italic");
 
 window.addEventListener("keyup", function (e) {
+  e.preventDefault();
   if (e.ctrlKey && e.key === "b") {
     content.focus();
+    document.execCommand("bold");
     boldEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "u") {
     content.focus();
+    document.execCommand("underline");
     underlineEl.classList.toggle("active");
   }
 
   if (e.ctrlKey && e.key === "i") {
     content.focus();
+    document.execCommand("italic");
     italicEl.classList.toggle("active");
   }
 });
