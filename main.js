@@ -2,6 +2,8 @@
 
 const content = document.getElementById("content");
 const container = document.querySelector(".container");
+const charNumber = document.querySelector(".char-number");
+const wordNumber = document.querySelector(".word-number");
 
 window.addEventListener("load", function () {
   content.focus();
@@ -58,6 +60,8 @@ function fileHandle(value) {
   if (value === "new") {
     content.innerHTML = "";
     filename.value = "United";
+    charNumber.innerText = `Số ký tự: 0`;
+    wordNumber.innerText = `Số từ: 0`;
   } else if (value === "txt") {
     const blob = new Blob([content.innerText]);
     console.log(blob);
@@ -66,16 +70,15 @@ function fileHandle(value) {
     link.href = url;
     link.download = `${filename.value}.txt`;
     link.click();
+    console.log(link.download);
   } else if (value === "pdf") {
     html2pdf().from(content).save(filename.value);
     filename.value = "United";
-    selectFile.selectedIndex = "0";
   }
-  content.focus();
-}
 
-const charNumber = document.querySelector(".char-number");
-const wordNumber = document.querySelector(".word-number");
+  content.focus();
+  selectFile.selectedIndex = "0";
+}
 
 const countEvent = new Event("count");
 
