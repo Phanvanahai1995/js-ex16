@@ -67,13 +67,12 @@ function fileHandle(value) {
     link.href = url;
     link.download = `${filename.value}.txt`;
     link.click();
-    content.focus();
   } else if (value === "pdf") {
     html2pdf().from(content).save(filename.value);
     filename.value = "United";
     selectFile.selectedIndex = "0";
-    content.focus();
   }
+  content.focus();
 }
 
 const charNumber = document.querySelector(".char-number");
