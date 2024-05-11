@@ -4,6 +4,9 @@ const content = document.getElementById("content");
 const container = document.querySelector(".container");
 const charNumber = document.querySelector(".char-number");
 const wordNumber = document.querySelector(".word-number");
+const boldEl = document.querySelector(".bold");
+const underlineEl = document.querySelector(".underline");
+const italicEl = document.querySelector(".italic");
 
 window.addEventListener("load", function () {
   content.focus();
@@ -58,10 +61,7 @@ const selectFile = document.getElementById("file");
 
 function fileHandle(value) {
   if (value === "new") {
-    content.innerHTML = "";
-    filename.value = "United";
-    charNumber.innerText = `Số ký tự: 0`;
-    wordNumber.innerText = `Số từ: 0`;
+    location.reload();
   } else if (value === "txt") {
     const blob = new Blob([content.innerText]);
     console.log(blob);
@@ -102,10 +102,6 @@ content.addEventListener("input", function () {
   charNumber.dispatchEvent(countEvent);
   wordNumber.dispatchEvent(countEvent);
 });
-
-const boldEl = document.querySelector(".bold");
-const underlineEl = document.querySelector(".underline");
-const italicEl = document.querySelector(".italic");
 
 window.addEventListener("keyup", function (e) {
   e.preventDefault();
