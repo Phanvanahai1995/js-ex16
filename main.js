@@ -7,6 +7,7 @@ const wordNumber = document.querySelector(".word-number");
 const boldEl = document.querySelector(".bold");
 const underlineEl = document.querySelector(".underline");
 const italicEl = document.querySelector(".italic");
+const decorations = document.querySelectorAll(".state");
 
 window.addEventListener("load", function () {
   content.focus();
@@ -58,10 +59,20 @@ showCode.addEventListener("click", function () {
 
 const filename = document.getElementById("filename");
 const selectFile = document.getElementById("file");
+const states = ["bold", "underline", "italic", "strikeThrough"];
 
 function fileHandle(value) {
   if (value === "new") {
-    location.reload();
+    content.innerHTML = "";
+    decorations.forEach((deco) => {
+      if (
+        deco.classList.contains("active") &&
+        document.queryCommandState(deco.classList[0])
+      ) {
+        document.execCommand(deco.classList[0], true);
+      }
+      deco.classList.remove("active");
+    });
   } else if (value === "txt") {
     const blob = new Blob([content.innerText]);
     console.log(blob);
